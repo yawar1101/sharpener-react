@@ -1,11 +1,13 @@
-export default function ExpenseItem() {
+import './ExpenseItem.css'
+
+export default function ExpenseItem(props) {
     return (
-        <>
-            <p>
-            Food Rs 10
-            Petrol Rs 100
-            Movies Rs 200
-            </p>
-        </>
+        <div className='expense-item'>
+            <div>{props.date.toLocaleDateString()}</div>
+            <div className='expense-item__description'>
+                <h2>{props.title}</h2>
+                <div className='expense-item__price'>{props.amount}</div>
+            </div>
+        </div>
     )
 }
